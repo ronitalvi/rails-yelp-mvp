@@ -1,0 +1,32 @@
+<table class="table table-dark align-items-baseline">
+  <thead>
+    <tr>
+
+      <th scope="col">Name</th>
+      <th scope="col">adress</th>
+      <th scope="col">phone number</th>
+      <th scope="col">link</th>
+      <th scope="col">category</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+
+      <% @restaurants.each do |r| %>
+
+      <td><h2><%=r.name%></h2></td>
+      <td><h4> <%=r.address%></h4></td>
+      <td><h4><%=r.phone_number%></h4></td>
+      <td><h4><%=r.category%></h4></td>
+      <td><h4><%= link_to 'seemore', restaurant_path(r), class: "btn btn-primary" %></h4></td>
+    </tr>
+    <tr>
+      <% end %>
+
+  </tbody>
+</table>
+<%= link_to 'add new restaurant', new_restaurant_path, class: "btn btn-primary" %>
+
+
+
+
